@@ -23,9 +23,9 @@ var accordion = (function(){
         $.extend(settings, $settings); 
         
         // ensure only one accordion is active if oneOpen is true
-        // if(settings.oneOpen && $('.js-accordion-item.active').length > 1) {
-        //  $('.js-accordion-item.active:not(:first)').removeClass('active');
-        // }
+        if(settings.oneOpen && $('.js-accordion-item.active').length > 1) {
+          $('.js-accordion-item.active:not(:first)').removeClass('active');
+        }
         
         // reveal the active accordion bodies
         $('.js-accordion-item.active').find('> .js-accordion-body').show();
@@ -48,5 +48,5 @@ var accordion = (function(){
   })();
   
   $(document).ready(function(){
-    accordion.init({ speed: 300, oneOpen: true });
+    accordion.init({ speed: 500, oneOpen: false });
   });
