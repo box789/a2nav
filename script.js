@@ -10,7 +10,7 @@ var accordion = (function(){
       speed: 400,
       
       // close all other accordion items if true
-      oneOpen: false
+      oneOpen: true
     };
       
     return {
@@ -23,9 +23,9 @@ var accordion = (function(){
         $.extend(settings, $settings); 
         
         // ensure only one accordion is active if oneOpen is true
-        if(settings.oneOpen && $('.js-accordion-item.active').length > 1) {
-          $('.js-accordion-item.active:not(:first)').removeClass('active');
-        }
+        // if(settings.oneOpen && $('.js-accordion-item.active').length > 1) {
+        //  $('.js-accordion-item.active:not(:first)').removeClass('active');
+        // }
         
         // reveal the active accordion bodies
         $('.js-accordion-item.active').find('> .js-accordion-body').show();
